@@ -1,4 +1,4 @@
-		<footer class="page-footer grey lighten-4 black-text center" role="contentinfo">
+		<footer class="page-footer black-text center" role="contentinfo">
 		
 			<div id="inner-footer" class="row no-margin-bot">
 

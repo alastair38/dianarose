@@ -40,7 +40,7 @@ $bg = get_field('background');
 
       <?php if($headerText):?>
 
-      <h2 id="skip-target" class="cta-header-text h5 block"><?php echo $headerText;?></h2>
+      <h1 id="skip-target" class="cta-header-text h4 block"><?php echo $headerText;?></h1>
 
       <?php endif;?>
 
@@ -48,7 +48,7 @@ $bg = get_field('background');
 
       <?php if($link):?>
       <p class="cta-action">
-          <a href="<?php echo $link;?>" class="btn-flat"><?php echo $linkText;?></a>
+          <a href="<?php echo $link;?>" class="accent"><?php echo $linkText;?></a>
       </p>
       <?php endif;?>
     </article>

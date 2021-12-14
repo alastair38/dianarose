@@ -38,7 +38,7 @@ $bg_image = get_field('statement_background');
 <?php if($statement){?>
   <div class="heading-wrapper">
   <?php if($bg_image) {?>
-  <img src="<?php echo $bg_image['url'];?>" alt="<?php echo $bg_image['alt'];?>" width="300" height="300"/>
+  <img src="<?php echo $bg_image['url'];?>" alt="<?php echo $bg_image['alt'];?>" width="250" height="250"/>
 <?php }?>
 <div class="statement-text">
   <h1 class="display-type"><?php echo $statement;?></h1>
@@ -46,7 +46,7 @@ $bg_image = get_field('statement_background');
   <p><?php echo $text;?></p>
 <?php }?>
 <?php if($link) {?>
-  <a href="<?php echo $link;?>">Read Nikolas' full biography</a>
+  <a class="white z-depth-1" href="<?php echo $link;?>">Read Diana's full biography</a>
 <?php }?>
 
 </div>

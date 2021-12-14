@@ -1,45 +1,55 @@
-.feat-pages-wrapper {
-  max-width: 80%;
-  margin: auto;
-}
-
 .feat {
   // border: 1px solid color('grey', 'lighten-2');
-  border-radius: 3px;
+  border-radius: 4px;
   line-height: 0;
-  background: $neutral-light;
+  width: 100%;
   margin-bottom: 1rem;
-  a {
-    border-radius: 30px;
-    padding: 0.25rem 0.75rem;
-    display: inline-flex;
+  overflow: hidden;
+  display: inline-flex;
+  background: $neutral-light;
+  padding: 1rem;
+  justify-content: space-between;
+  @media #{$medium-only} {
+    flex-direction: column;
     align-items: center;
-    text-decoration: none;
+  }
+  // &:nth-of-type(2n) {
+  //   flex-direction: row-reverse;
+  // }
+  a {
+    padding: 1rem 0.5rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: underline;
+    text-decoration-color: $accent-color;
+    text-decoration-thickness: 3px;
+    color: $neutral-dark;
     transition: 350ms;
-    border: 2px solid;
   }
   a:hover,
   a:focus {
-    color: $link-hover-color;
+    text-decoration-color: $neutral-dark;
   }
+  // a:hover {
+  //   width: 105%;
+  // }
   @media #{$medium-and-up} {
     margin-bottom: 0;
   }
   h2,
   h3 {
     font-size: $h6-fontsize;
-
-    padding-bottom: 0.25rem;
-    display: flex;
-    justify-content: center;
-    text-align: center;
+    margin: 0;
+    text-transform: uppercase;
+    width: 100%;
   }
   img {
-    padding: 0.5rem;
-    width: 100%;
-    height: 175px;
-    object-fit: fill;
-    aspect-ratio: 4/3;
+    border-radius: 50%;
+    object-fit: cover;
+    aspect-ratio: 1;
   }
   .feat-content {
     line-height: 1.5;
@@ -298,7 +308,7 @@ ul.grid-gallery {
 .article-list {
   position: relative;
   padding: 1.5rem;
-  background: color('grey', 'lighten-5');
+  background: $neutral-light;
   border-radius: 4px;
   margin: 0 0 3rem 0;
   a {
@@ -318,11 +328,19 @@ ul.grid-gallery {
     font-size: 0.85rem;
     margin-bottom: 0;
   }
+  .lecture-date {
+    background: color('grey', 'lighten-4');
+    color: $neutral-dark;
+    padding: 0.25rem 1rem;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 4px;
+  }
   h2,
   h3 {
     font-size: 1.25rem;
     font-weight: 600;
-    margin: 0.25rem 0;
+    margin: 0.25rem 0 0 0;
   }
   span.badge.new {
     position: absolute;
@@ -347,18 +365,17 @@ ul.grid-gallery {
   margin-top: 1rem;
   a {
     border-radius: 30px;
-    background: transparent;
+    background: $accent-color;
     padding: 0.25rem 0.75rem;
     display: inline-flex;
     align-items: center;
     text-decoration: none;
     transition: 350ms;
-    border: 2px solid;
     font-size: 0.9rem;
     &:hover,
     &:focus {
-      color: $link-hover-color;
-      background: transparent;
+      color: $neutral-light;
+      background: $neutral-dark;
       transition: 350ms;
     }
     i {

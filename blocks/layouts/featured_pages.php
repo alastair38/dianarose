@@ -33,7 +33,7 @@ if( have_rows('pages') ):
   $title = get_field('section_title');
   $bg = get_field('background');
 
-  echo '<div id="' . $id . '" class="' . $bg . ' lighten-3 feat-pages row block"><div class="feat-pages-wrapper">';
+  echo '<div id="' . $id . '" class="block feat-pages">';
 
   if($title) {
     echo '<h2 class="col s12 h4">' . $title . '</h2>';
@@ -45,21 +45,19 @@ if( have_rows('pages') ):
       $image = get_sub_field('feat_image');
       $image_alt = $image['alt'];
 
-      echo '<div class="col s12 m' . $cols . '">
-      <div class="feat">
-      <img src="' . $image['sizes']['card-thumbnail size'] . '" height="175" width="275" alt="' . $image_alt . '" />';
+      echo '<div class="feat z-depth-1">
+      <img src="' . $image['sizes']['card-thumbnail size'] . '" height="100" width="100" alt="' . $image_alt . '" />';
 
       if($title) {
       echo '<h3 class="center"><a href="' . get_sub_field('feat_link') . '" rel="bookmark">' . get_sub_field('feat_title') . '</a></h3>';
       } else {
         echo '<h2 class="center"><a href="' . get_sub_field('feat_link') . '" rel="bookmark">' . get_sub_field('feat_title') . '</a></h2>';
       }
-      echo '</div>
-      </div>';
+      echo '</div>';
 
     endwhile;
 
-    echo '</div></div>';
+    echo '</div>';
 
 endif;
 ?>

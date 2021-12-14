@@ -50,16 +50,33 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+// Utility color classes
+
+.accent {
+  background: $accent-color;
+}
+
+.accent-light {
+  background: $accent-color-light;
+}
+
+.accent-text {
+  color: $accent-color;
+}
+
 // Main content link Styles
 
 .entry-content {
   a {
     position: relative;
     text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: $accent-color;
+    color: $neutral-dark;
     transition: 350ms;
     &:hover,
     &:focus {
-      color: $link-hover-color;
+      text-decoration-color: $neutral-dark;
       transition: 350ms;
     }
   }
@@ -99,8 +116,9 @@ a {
 
 /* 2dp elevation modified*/
 .z-depth-1 {
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-    0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.02), 0 2px 2px rgba(0, 0, 0, 0.02),
+    0 4px 4px rgba(0, 0, 0, 0.02), 0 8px 8px rgba(0, 0, 0, 0.02),
+    0 16px 16px rgba(0, 0, 0, 0.02);
 }
 .z-depth-1-half {
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12),
@@ -109,8 +127,9 @@ a {
 
 /* 6dp elevation modified*/
 .z-depth-2 {
-  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
-    0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+    0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
+    0 16px 16px rgba(0, 0, 0, 0.12);
 }
 
 /* 12dp elevation modified*/
@@ -151,12 +170,14 @@ a {
 //  Blockquote
 
 figure.quote {
-  background: color('grey', 'lighten-4');
   margin: 2rem 0;
   padding: 2.75rem;
-  border-radius: 4px;
   position: relative;
   z-index: 1;
+  color: $neutral-dark;
+  @media #{$small-and-down} {
+    padding: 1rem;
+  }
   blockquote,
   figcaption {
     width: 80%;
@@ -176,21 +197,27 @@ figure.quote {
     content: '\e244';
     font-size: 6rem;
     position: absolute;
-    color: rgba(0, 0, 0, 0.03);
+    color: rgba(0, 0, 0, 0.3);
     left: 0;
     top: 0;
     transform: rotate(180deg);
     z-index: -1;
+    @media #{$small-and-down} {
+      font-size: 2.5rem;
+    }
   }
   &:after {
     font-family: 'Material Icons';
     content: '\e244';
     font-size: 6rem;
     position: absolute;
-    color: rgba(0, 0, 0, 0.03);
+    color: rgba(0, 0, 0, 0.3);
     right: 0;
     bottom: 0;
     z-index: -1;
+    @media #{$small-and-down} {
+      font-size: 2.5rem;
+    }
   }
 }
 

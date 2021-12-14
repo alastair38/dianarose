@@ -24,7 +24,7 @@ if( !empty($block['align']) ) {
     $className .= ' align' . $block['align'];
 } ?>
 
-<section id="<?php echo $id;?>" class="row block featured-book grey lighten-4">
+<section id="<?php echo $id;?>" class="row block featured-book accent z-depth-1">
 
 <?php 
 // Load values and assing defaults.
@@ -43,10 +43,12 @@ $featured = get_field('featured_book');
       while( have_rows('book_quotes', $featured) ) : the_row();
       $text = get_sub_field('quote_text', $featured);
       $author = get_sub_field('quote_author', $featured);
+     // $image = get_the_post_thumbnail_url($featured, 'thumbnail' );
 
           // Load sub field value.
           echo '<figure class="quote">';
-          echo '<h2><a href="' . get_the_permalink($featured) . '">' . $section_title . ' - ' . $post_title . '</a></h2>';
+          echo '<h2><a href="' . get_the_permalink($featured) . '">' . $post_title . '</a></h2>';
+        
           if($text):
             echo '<blockquote>' . $text . '</blockquote>';
           endif;

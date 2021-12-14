@@ -25,17 +25,16 @@ label {
   input[type='submit'] {
     background: $accent-color;
     border-radius: 30px;
+    border: none;
     padding: 0.25rem 0.75rem;
     display: inline-flex;
     align-items: center;
     transition: 350ms;
-    border: 2px solid transparent;
     cursor: pointer;
     &:focus,
     &:hover {
-      background: color('grey', 'darken-2');
+      background: $neutral-dark;
       color: $neutral-light;
-      border-color: $neutral-dark;
     }
   }
   input[type='search'] {
@@ -47,9 +46,8 @@ label {
       box-shadow: none;
     }
     &:focus + input {
-      background: color('grey', 'darken-2');
+      background: $neutral-dark;
       color: $neutral-light;
-      border-color: $neutral-dark;
     }
   }
 }

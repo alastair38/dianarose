@@ -1,6 +1,6 @@
 <article itemscope itemtype="https://schema.org/Book" id="post-<?php the_ID(); ?>" class="article-list">
 
-	<h2 itemprop="name"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+	<h2 itemprop="name"><?php the_title(); ?></h2>
 	
 	<?php
 
@@ -17,7 +17,7 @@
 	$doi = get_field("doi");
 	?>
 
-<div class="book-details <?php if($thumbnail): echo 'grid'; endif ;?>">
+<div class="book-details grid <?php if(!$thumbnail): echo 'span-full'; endif ;?>">
 
 <?php
 
@@ -33,7 +33,7 @@
 	endif;
 
 	if( $pages ): 
-		echo '<span itemprop="numberOfPages">' . $pages . '</span>pp. ';
+		echo '<span itemprop="numberOfPages">' . $pages . '</span> pages. ';
 	endif;
 	
 	if( $editors ): 
@@ -88,10 +88,8 @@
 	echo '</div>';
 
 	// if( $pubLink ): 
-	// 	echo '<div class="book-link"><a class="chip" href="' . $pubLink . '">View Publication</a></div>';
-	// endif;
-
-	echo '</div>';
+			echo '<div class="book-link"><a class="accent" href="' . get_the_permalink() . '" rel="bookmark">View Publication</a></div>';
+			// endif;
 
 	$book_tags = get_the_terms( get_the_ID(), 'book_categories' );
 	//print_R($book_tags);
@@ -105,6 +103,10 @@
 	
 		echo '</span>';
 	}
+
+	
+
+	echo '</div>';
 ?>
 
 </article>

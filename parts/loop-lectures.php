@@ -13,12 +13,14 @@
 		echo $desc;
 	endif;
 
-	// if( $date['year'] ): 
-	// 	if( $date['month']):
-	// 	echo	$date['month'] . ' ';
-	// 	endif;
-	// 	echo $date['year'] . '.';
-	// endif;
+	if( $date['year'] ): 
+		echo '<span class="lecture-date">';
+		if( $date['month']):
+		echo	$date['month'];
+		endif;
+		echo $date['year'];
+		echo '</span>';
+	endif;
 
 	if( $video ): 
 		echo '<div class="article-link"><a href="' . get_the_permalink() . '" rel="bookmark">Go to video <svg class="icon right" aria-hidden="true"><use xlink:href="' . get_stylesheet_directory_uri() . '/assets/icons/symbol-defs.svg#icon-video"></use></svg></a></div>';
@@ -31,10 +33,6 @@
 	echo '</div>';
 
 	?>
-	<!-- <?php
-	if( strtotime( $post->post_date ) > strtotime('-7 day') ) {
-			echo '<span class="new badge"></span>';
-	}
-	?> -->
+	
 
 </article>

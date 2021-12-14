@@ -36,15 +36,16 @@ $primary-color: #002147 !default;
 $primary-color-light: lighten($primary-color, 15%) !default;
 $primary-color-dark: darken($primary-color, 15%) !default;
 $neutral-light: #ffffff;
-$neutral-dark: #212121;
+$neutral-dark: #000000;
 
 $secondary-color: color('blue', 'lighten-1') !default;
 $success-color: color('green', 'base') !default;
 $error-color: color('red', 'base') !default;
-$link-color: #283c86 !default;
+$link-color: $neutral-dark !default;
 $link-hover-color: $secondary-color !default;
-$accent-color: hsl(290, 39%, 73%) !default;
-$accent-color-hover: hsl(290, 39%, 53%) !default;
+$accent-color: hsla(161, 52%, 58%, 1) !default;
+$accent-color-light: hsla(161, 52%, 58%, 0.5) !default;
+$accent-color-hover: hsla(161, 52%, 58%, 1) !default;
 
 // 2. Badges
 // ==========================================================================
@@ -300,7 +301,7 @@ $toast-action-color: #eeff41;
 // 20. Typography
 // ==========================================================================
 
-$font-stack: -apple-system, BlinkMacSystemFont, 'Lato', 'Helvetica Neue',
+$font-stack: -apple-system, BlinkMacSystemFont, 'Montserrat', 'Helvetica Neue',
   sans-serif !default;
 $off-black: color('grey', 'darken-3') !default;
 // Header Styles

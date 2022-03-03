@@ -48,6 +48,8 @@ require_once(get_template_directory().'/assets/functions/admin.php');
 
 require_once(get_template_directory().'/assets/functions/blocks.php');
 
+require_once(get_template_directory().'/assets/functions/register-blocks.php');
+
 //$publications = get_field('enable_publications', 'option');
 
 require_once(get_template_directory().'/assets/functions/projects-cpt.php');

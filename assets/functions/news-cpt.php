@@ -33,6 +33,7 @@ function ac_base_news() {
       'capability_type' => 'post',
       'hierarchical' => false,
       /* the next one is important, it tells what's enabled in the post editor */
+      'show_in_rest' => true,
       'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt')
     ) /* end of options */
   ); /* end of register post type */

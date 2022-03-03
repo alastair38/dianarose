@@ -1,0 +1,23 @@
+.block-editor-page .acf-field .acf-input > p.description {
+  margin-top: 1rem !important;
+  background: #ececec;
+  padding: 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.block-editor-page .acf-field .acf-label label {
+  font-weight: 400 !important;
+  text-transform: uppercase;
+  background: #474747;
+  color: white;
+  padding: 0.25rem 0.75rem !important;
+  border-radius: 30px;
+  display: inline-flex !important;
+  align-items: center;
+}
+
+.block-editor-page .acf-block-body .acf-block-fields {
+  border-radius: 4px;
+}

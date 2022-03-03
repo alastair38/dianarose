@@ -20,6 +20,24 @@ function register_acf_block_types() {
     ));
 
     acf_register_block_type(array(
+      'name'              => 'call_to_action_bg',
+      'title'             => __('CTA w/ background image'),
+      'description'       => __('Add a call to action statement with optional page link'),
+      'render_template' => get_template_directory() . '/blocks/layouts/cta_background.php',
+      'category'          => 'custom-blocks',
+      'icon' => array(
+      // Specifying a color for the icon (optional: if not set, a readable color will be automatically defined)
+        'foreground' => '#ff005d',
+      // Specifying a dashicon for the block
+        'src' => 'megaphone',
+      ),
+
+      //'enqueue_style' => get_template_directory_uri() . '/assets/css/style.css',
+      'keywords'          => array( 'call to action', 'cta' ),
+
+  ));
+
+    acf_register_block_type(array(
         'name'              => 'featured_pages',
         'title'             => __('Featured Pages'),
         'description'       => __('Showcase your main pages in a grid layout'),
@@ -34,6 +52,27 @@ function register_acf_block_types() {
         //'enqueue_style' => get_template_directory_uri() . '/assets/css/style.css',
         'keywords'          => array( 'featured', 'pages' ),
     ));
+
+
+    acf_register_block_type(array(
+      'name'              => 'featured_publications',
+      'title'             => __('Featured Publications'),
+      'description'       => __('Add publication details to a page.'),
+      'render_template' => get_template_directory() . '/blocks/layouts/featured_publication.php',
+      'category'          => 'custom-blocks',
+      'icon' => array(
+      // Specifying a color for the icon (optional: if not set, a readable color will be automatically defined)
+        'foreground' => '#ff005d',
+      // Specifying a dashicon for the block
+        'src' => 'admin-post',
+      ),
+      'mode' => 'edit',
+      'supports' => array( 
+          'align' => false,
+      ),
+      //'enqueue_style' => get_template_directory_uri() . '/assets/css/style.css',
+      'keywords'          => array( 'featured', 'publications' ),
+  ));
 
     acf_register_block_type(array(
         'name'              => 'hero',
@@ -238,6 +277,10 @@ function register_acf_block_types() {
         // Specifying a dashicon for the block
           'src' => 'cover-image',
         ),
+        'mode' => 'edit',
+      'supports' => array( 
+          'align' => false,
+      ),
         //'enqueue_style' => get_template_directory_uri() . '/assets/css/style.css',
         'keywords'          => array( 'statement block', 'header' ),
     ));

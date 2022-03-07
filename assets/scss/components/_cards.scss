@@ -213,12 +213,12 @@ ul.grid-gallery {
 
   @media #{$medium-and-up} {
     grid-template-columns: 150px 1fr;
-    grid-template-rows: 150px;
+    grid-template-rows: 225px;
   }
   h2,
   h3 {
     font-size: 1.25rem;
-    margin: 1rem 0;
+    margin: 0;
   }
   img {
     display: flex;
@@ -229,15 +229,8 @@ ul.grid-gallery {
       border-radius: 3px 0 0 3px;
     }
   }
-  a {
-    position: relative;
-    transition: 350ms;
-    z-index: 10;
-    text-decoration: none;
-    &:hover,
-    &:focus {
-      color: $link-hover-color;
-    }
+  .article-link {
+    margin: 0;
   }
   .card-content {
     display: flex;

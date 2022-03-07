@@ -12,7 +12,7 @@
 						<h1 id="skip-target" class="page-title h3"><?php single_post_title();?></h1>
 					</header>
 
-					<div class="entry-content archive-<?php echo get_post_type(); ?>">
+					<div class="entry-content archive-blog">
 
 					<?php $desc = get_field("news_page_description", "options");
 						if($desc) {
@@ -22,7 +22,7 @@
 			    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 					<!-- To see additional archive styles, visit the /parts directory -->
-					<?php get_template_part( 'parts/loop', 'projects' ); ?>
+					<?php get_template_part( 'parts/loop', 'blog' ); ?>
 
 				<?php endwhile; ?>
 

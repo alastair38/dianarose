@@ -1,26 +1,35 @@
 <article id="post-<?php the_ID(); ?>" class="blog-card">
 
   <?php
+
+  $blog_link = get_field('blog_link');
+
   if ( has_post_thumbnail() ) {
   the_post_thumbnail( array(300, 300) );
-} else {
-  $image = get_field("default_image", "options");
-  //var_dump($image);
-  //print_r($image);
-  echo '<img src="' . $image['url'] . '" width="'. $image['sizes']['blog-thumbnail size-width'] . '" height="' . $image['sizes']['blog-thumbnail size-height'] . '" alt="' . $image['alt'] . '" />';
-
 }?>
 
   <div class="card-content">
 
-		<h2><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-  	<span class="date"><?php the_time('F j, Y');?></span>
+		<h2><?php the_title(); ?></h2>
+  	<!-- <span class="date"><?php the_time('F j, Y');?></span> -->
 
     <?php
-  	if( strtotime( $post->post_date ) > strtotime('-7 day') ) {
-  			echo '<span class="new badge"></span>';
-  	}
-  	?>
+
+    the_excerpt();
+
+  	// if( strtotime( $post->post_date ) > strtotime('-7 day') ) {
+  	// 		echo '<span class="new badge"></span>';
+  	// }
+  	
+
+if( $blog_link ) {
+echo '<div class="article-link"><a itemprop="sameAs" href="' . $blog_link . '">View Article</a></div>';
+} else {
+  echo '<div class="article-link"><a href="' . the_permalink() . '" rel="bookmark">View Article</a></div>';
+}
+	
+  
+  ?>
 
   </div>
 

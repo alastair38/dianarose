@@ -23,6 +23,9 @@ function remove_plugin_image_sizes() {
 	// Add Support for WP Controlled Title Tag
 	add_theme_support( 'title-tag' );
 
+	add_post_type_support( 'page', 'excerpt' );
+
+
 	function ac_base_meta_description() {
     global $post;
     if ( is_singular() && !is_front_page() ) {

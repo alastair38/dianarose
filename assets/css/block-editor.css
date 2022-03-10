@@ -4049,6 +4049,26 @@ a svg {
     .feat .feat-content span {
       font-size: 14px; }
 
+.feat-pages-extended {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0; }
+  .feat-pages-extended .feat {
+    flex-direction: column;
+    padding: 0;
+    line-height: normal;
+    justify-content: flex-start; }
+    .feat-pages-extended .feat h2 {
+      text-transform: capitalize; }
+    .feat-pages-extended .feat img {
+      border-radius: 0;
+      width: 100%;
+      aspect-ratio: 3 / 2; }
+    .feat-pages-extended .feat .content {
+      padding: 1rem;
+      margin-top: auto; }
+
 .workstreams article:last-of-type .feat img {
   object-position: top; }
 

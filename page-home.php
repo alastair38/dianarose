@@ -5,7 +5,7 @@ Template Name: Home Page
 get_header();
 ?>
 
-<main>
+<main class="container">
 
 	<div class="row no-margin-bot">
 

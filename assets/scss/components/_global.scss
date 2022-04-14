@@ -50,6 +50,16 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+// Utility spacing
+
+.m-block-default {
+  margin-block: 4rem;
+}
+
+.m-inline-default {
+  margin-inline: auto;
+}
+
 // Utility color classes
 
 .accent {
@@ -357,9 +367,26 @@ figure.hero {
 .entry-content figure.wp-block-image.size-full {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 3rem;
   border-radius: 4px;
+  overflow: hidden;
+  background-color: color('grey', 'lighten-4');
+  @media #{$small-and-down} {
+    flex-direction: column;
+  }
+  img {
+    border-radius: 0px;
+    width: 50%;
+    object-fit: cover;
+    @media #{$small-and-down} {
+      width: 100%;
+    }
+  }
+  figcaption {
+    width: 50%;
+    @media #{$small-and-down} {
+      width: 100%;
+    }
+  }
 }
 
 figure.left {

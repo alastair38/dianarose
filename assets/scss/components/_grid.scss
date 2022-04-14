@@ -53,12 +53,11 @@ main.container {
   text-align: left;
 }
 
-.row {
+div {
   &.no-margin-bot {
     margin-bottom: 0;
   }
   &.block {
-    margin-bottom: 0;
     &.workstreams {
       padding: 2rem 0;
     }
@@ -67,12 +66,23 @@ main.container {
       color: $neutral-light;
     }
     &.cta-wrapper {
-      padding: 5rem 0 0 0;
+      padding-block: 3rem 1.5rem;
     }
     &.latest-news {
-      background: color('grey', 'lighten-4');
+      display: grid;
+      gap: 1.5rem;
       //background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-      padding: 3rem 0;
+      border-radius: $card-radius;
+      h2 {
+        margin-top: 1.5rem;
+      }
+      .blog-card {
+        margin: 0;
+        @media #{$medium-and-up} {
+          grid-template-columns: 225px 1fr;
+          grid-template-rows: 225px;
+        }
+      }
     }
     &.statement {
       //background-color: #ff4747;
@@ -142,8 +152,7 @@ main.container {
 // CTA w/bg block
 
 .cta-bg-wrapper {
-  width: 75%;
-  margin: 9rem auto;
+  width: 100%;
   border-radius: 4px;
   overflow: hidden;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%230f0f0f' fill-opacity='.5' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
@@ -179,13 +188,20 @@ main.container {
 
 .block.feat-pages {
   border-radius: 4px;
-  width: 75%;
-  margin: 9rem auto;
+  width: 100%;
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   justify-content: space-between;
+  flex-wrap: wrap;
   @media #{$small-and-down} {
     flex-direction: column;
+  }
+  h2 {
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+  .feat {
+    flex: 1;
   }
 }
 
@@ -197,7 +213,7 @@ main.container {
   padding: 0rem 5%;
   border-radius: 4px;
   margin: 9rem auto;
-  width: 75%;
+  width: 100%;
   .book-block-details {
     display: flex;
     align-items: center;
@@ -535,6 +551,9 @@ ul#contact {
 
 .article-details {
   padding: 1rem 0;
+  span.block {
+    overflow-wrap: break-word;
+  }
 }
 
 // Books layout
@@ -698,7 +717,6 @@ ul.share-links.center.columns {
 .row {
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 20px;
 
   // Clear floating children
   &:after {

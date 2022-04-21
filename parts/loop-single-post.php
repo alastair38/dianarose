@@ -23,6 +23,14 @@
 			
 		<?php the_content();?>
 
+		<?php $blog_link = get_field('blog_link');
+
+		if( $blog_link ) {
+			echo '<div class="article-link"><a itemprop="sameAs" aria-label="Read ' . get_the_title() . '" href="' . $blog_link . '">Read Article</a></div>';
+			} 
+
+		?>
+
 		</div> <!-- end article section -->
 
 		<footer class="article-footer center">

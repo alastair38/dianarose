@@ -23,9 +23,9 @@
   	
 
 if( $blog_link ) {
-echo '<div class="article-link"><a itemprop="sameAs" href="' . $blog_link . '">View Article</a></div>';
+echo '<div class="article-link"><a itemprop="sameAs" aria-label="Read ' . get_the_title() . '" href="' . $blog_link . '">Read Article</a></div>';
 } else {
-  echo '<div class="article-link"><a href="' . the_permalink() . '" rel="bookmark">View Article</a></div>';
+  echo '<div class="article-link"><a aria-label="Read ' . get_the_title() . '" href="' . the_permalink() . '" rel="bookmark">Read Article</a></div>';
 }
 	
   

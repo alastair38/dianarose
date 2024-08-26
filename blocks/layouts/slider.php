@@ -24,6 +24,10 @@ if( !empty($block['align']) ) {
     $className .= ' align' . $block['align'];
 }
 
+if(function_exists('get_field')):
+  
+  // check if ACF is activated to before grabbing field values
+  
 // Load values and assing defaults.
 $statement = get_field('slider_header');
 $byline = get_field('slider_byline');
@@ -59,3 +63,5 @@ $size = 'full'; // (thumbnail, medium, large, full or custom size)
 <?php }?>
   
 </div>
+
+<?php endif;?>

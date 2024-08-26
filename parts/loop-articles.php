@@ -4,6 +4,10 @@
 	<div class="article-details">
 	<?php
 
+if(function_exists('get_field')):
+  
+  // check if ACF is activated to before grabbing field values
+  
 
 	$editors = get_field("editors");
 	$pubTitle = get_field("publication_title");
@@ -48,7 +52,8 @@
 	if( $pubLink ): 
 		echo '<div class="article-link"><a itemprop="sameAs" href="' . $pubLink . '">View Publication</a></div>';
 	endif;
-
+	
+	endif;
 	echo '</div>';
 
 	$library_tags = get_the_terms( get_the_ID(), 'articles_categories' );

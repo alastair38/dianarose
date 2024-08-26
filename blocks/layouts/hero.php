@@ -24,6 +24,8 @@ if( !empty($block['align']) ) {
     $className .= ' align' . $block['align'];
 }
 
+if(function_exists('get_field')):
+    
 // Load values and assing defaults.
 
 $image = get_field('hero_image');
@@ -35,3 +37,4 @@ $img_srcset = wp_get_attachment_image_srcset( $image['id'], 'full' );
       <img src="<?php echo $image['url']; ?>" srcset="<?php echo esc_attr( $img_srcset ); ?>" sizes="100vw" alt="<?php echo $image['alt']; ?>"/>
     </figure>
 </div>
+<?php endif;?>

@@ -24,6 +24,8 @@ if( !empty($block['align']) ) {
     $className .= ' align' . $block['align'];
 }
 
+if(function_exists('get_field')):
+
 // Load values and assing defaults.
 $statement = get_field('statement_header');
 $text = get_field('statement_text');
@@ -33,7 +35,6 @@ $bg_image = get_field('statement_background');
 ?>
 
 <div id="<?php echo $id;?>" class="row block statement">
-
 
 <?php if($statement){?>
   <div class="heading-wrapper">
@@ -55,3 +56,4 @@ $bg_image = get_field('statement_background');
 <?php }?>
 
 </div>
+<?php endif;?>

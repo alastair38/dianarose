@@ -92,6 +92,8 @@ function disable_emojis_remove_dns_prefetch( $urls, $relation_type ) {
 }
 
 
+if(function_exists('get_field')):
+
 function my_acf_init() {
 	$api_key = get_field('api_key', 'option');
 	acf_update_setting('google_api_key', $api_key);
@@ -109,6 +111,7 @@ function my_acf_google_map_api( $api ){
 
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
+endif;
 
 if( function_exists('acf_add_options_page') ) {
 

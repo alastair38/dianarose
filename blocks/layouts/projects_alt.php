@@ -24,6 +24,8 @@ if( !empty($block['align']) ) {
     $className .= ' align' . $block['align'];
 }
 
+if(function_exists('get_field')):
+  
 // Load values and assing defaults.
 $numberposts = get_field('number_of_items');
 $bg = get_field('background');
@@ -64,4 +66,5 @@ foreach($latest_posts as $post) {
 echo '</div></div>';
 
 wp_reset_postdata();
+endif;
 ?>

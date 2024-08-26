@@ -24,6 +24,8 @@ if( !empty($block['align']) ) {
     $className .= ' align' . $block['align'];
 }
 
+if(function_exists('get_field')):
+  
 // Load values and assing defaults.
 $text = get_field('para_image_text');
 $class = get_field('image_float');
@@ -34,7 +36,7 @@ $image = get_field('para_image');
     <figure class="image <?php echo $class; ?>"><img src="<?php echo $image['sizes']['medium']; ?>"/>
       <figcaption><?php echo $text; ?></figcaption>
     </figure>
-    <?php the_field('paragraph_text');
-    //print_R($image);?>
+    <?php the_field('paragraph_text');?>
 
 </div>
+<?php endif;?>

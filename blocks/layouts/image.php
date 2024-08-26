@@ -24,6 +24,8 @@ if( !empty($block['align']) ) {
     $className .= ' align' . $block['align'];
 }
 
+if(function_exists('get_field')):
+  
 // Load values and assing defaults.
 $text = get_field('image_text');
 $class = get_field('image_class');
@@ -38,3 +40,4 @@ $image = get_field('standard_image');
       <figcaption><?php echo $text; ?></figcaption>
     </figure>
 </div>
+<?php endif;?>

@@ -24,6 +24,8 @@ if( !empty($block['align']) ) {
     $className .= ' align' . $block['align'];
 }
 
+if(function_exists('get_field')):
+  
 // Load values and assing defaults.
 $images = get_field('images');
 $size = 'full'; // (thumbnail, medium, large, full or custom size)
@@ -37,4 +39,5 @@ if( $images ):
 
     <?php endforeach; ?>
 </ul>
-<?php endif; ?>
+<?php endif;  
+endif;?>

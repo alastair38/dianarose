@@ -15,9 +15,9 @@
 
     <div class="entry-content" itemprop="articleBody">
 			
-			<?php
-			
-			
+	<?php
+	if(function_exists('get_field')):
+	
 	$editors = get_field("editors");
 	$pubTitle = get_field("publication_title");
 	$volumeDetails = get_field("volume_details");
@@ -96,7 +96,9 @@
 			// Do something...
 		endif;
 
-	    	wp_link_pages(); ?>
+	    	wp_link_pages(); 
+				
+		endif; ?>
 
 		</div> <!-- end article section -->
 

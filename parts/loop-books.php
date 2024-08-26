@@ -3,6 +3,10 @@
 	<h2 itemprop="name"><?php the_title(); ?></h2>
 	
 	<?php
+	
+	if(function_exists('get_field')):
+		
+	
 
 	$thumbnail = get_the_post_thumbnail_url(); 
 	$editors = get_field("editors");
@@ -107,6 +111,8 @@
 	
 
 	echo '</div>';
+
+	endif;
 ?>
 
 </article>

@@ -9,7 +9,9 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- Google site verification tag -->
-    <?php if ( is_front_page() ) :
+    <?php if(function_exists('get_field')):
+    
+    if ( is_front_page() ) :
       $verification_code = get_field("verification_code", "options");
       if($verification_code):
       ?>
@@ -17,6 +19,7 @@
     <meta name="google-site-verification" content="<?php echo $verification_code;?>" />
 
     <?php endif;
+    endif;
     endif;?>
 
 		<!-- Mobile Meta -->
@@ -33,6 +36,9 @@
     <meta name="theme-color" content="#ffffff">
 
     <?php if(is_singular()):
+    
+    if(function_exists('get_field')):
+   
       $twitter = get_field("twitter", "options");
       $page_id = $wp_query->get_queried_object_id();
       $post_thumbnail = get_the_post_thumbnail_url($page_id, 'full');
@@ -60,7 +66,9 @@
 		<meta property="og:description" content="<?php echo $excerpt;?>" />
 		<meta property="og:image" content="<?php echo $post_thumbnail;?>" />
 
-		<?php endif;?>
+		<?php endif; 
+  
+    endif;?>
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 

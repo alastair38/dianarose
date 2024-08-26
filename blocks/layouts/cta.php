@@ -15,6 +15,9 @@ if( !empty($block['anchor']) ) {
     $id = $block['anchor'];
 }
 
+if(function_exists('get_field')):
+  
+
 $headerText = get_field('cta_header_text');
 $cta = get_field('call_to_action');
 $link = get_field('cta_link');
@@ -54,3 +57,4 @@ $bg = get_field('background');
     </article>
   </div>
 </div>
+<?php endif;?>

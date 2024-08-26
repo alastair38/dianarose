@@ -1,5 +1,7 @@
 
   <?php
+  if(function_exists('get_field')):
+  
   $images = get_field('gallery');
   if( $images ): ?>
 
@@ -10,4 +12,5 @@
     </div>
     <?php endforeach; ?>
   </div>
-  <?php endif;?>
+  <?php endif;
+endif;?>

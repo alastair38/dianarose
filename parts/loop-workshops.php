@@ -8,11 +8,13 @@ $excerpt = get_the_excerpt();
 if ( has_post_thumbnail($post->ID) ) {
 echo get_the_post_thumbnail($post->ID, array(600, 600) );
 } else {
+
+if(function_exists('get_field')):
+  
 $image = get_field("default_image", "options");
-//var_dump($image);
-//print_r($image);
 echo '<img src="' . $image['url'] . '" width="'. $image['sizes']['blog-thumbnail size-width'] . '" height="' . $image['sizes']['blog-thumbnail size-height'] . '" />';
 
+endif;
 }?>
 
 <div class="feat-content">

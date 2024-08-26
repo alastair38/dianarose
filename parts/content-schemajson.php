@@ -1,4 +1,8 @@
 <?php
+if(function_exists('get_field')):
+  
+  // check if ACF is activated to before grabbing field values
+  
 
 	add_action('wp_footer', function() {
 	  $schema = array(
@@ -100,6 +104,6 @@
 
 	echo '<script type="application/ld+json">' . json_encode($schema) . '</script>';
 	});
-
+endif;
 
  ?>

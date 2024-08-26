@@ -14,10 +14,11 @@
 		</header> <!-- end article header -->
 
     <div class="entry-content">
-
-			
+	
 			<?php
-
+			
+			if(function_exists('get_field')):
+	
 				echo '<div class="article-details">';
 			
 				$date = get_field("lecture_date");
@@ -28,14 +29,7 @@
 				if( $desc ): 
 					echo '<div itemprop="description">' . $desc . '</div>';
 				endif;
-			
-				// if( $date['year'] ): 
-				// 	if( $date['month']):
-				// 	echo	$date['month'] . ' ';
-				// 	endif;
-				// 	echo $date['year'] . '.';
-				// endif;
-			
+
 				if( $video ): 
 					echo '<figure class="video-wrapper" itemprop="videoObject">' . $video . '<figcaption>Watch the video of the <em>' . get_the_title() . '</em> lecture</figcaption></figure>';
 				endif;
@@ -82,7 +76,9 @@
 			// Do something...
 		endif;
 
-	    	wp_link_pages(); ?>
+	    	wp_link_pages(); 
+				
+				endif;?>
 
 		</div> <!-- end article section -->
 

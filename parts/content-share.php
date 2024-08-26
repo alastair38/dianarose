@@ -1,4 +1,7 @@
-<?php  $share_buttons = get_field('share_buttons', 'option');
+<?php  
+if(function_exists('get_field')):
+  
+$share_buttons = get_field('share_buttons', 'option');
 
 if($share_buttons):?>
 
@@ -8,4 +11,5 @@ if($share_buttons):?>
 
 	<li><a href="mailto:?subject=I wanted to share this post with you from <?php bloginfo('name'); ?>&body=<?php the_title('','',true); ?>&#32;&#32;<?php echo wp_get_shortlink() ?>" target="_blank" aria-label="Share this content by email"><svg class="icon icon-email right" aria-hidden="true"><use xlink:href="<?php echo get_stylesheet_directory_uri();?>/assets/icons/symbol-defs.svg#icon-mail"></use></svg></a> </li>
 </ul>
-<?php endif;?>
+<?php endif;
+endif;?>

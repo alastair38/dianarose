@@ -8,21 +8,17 @@
 
 			<h1 id="skip-target" class="entry-title single-title h4" itemprop="headline"><?php the_title();?></h1>
 			<?php 
-			// if(is_singular( 'post' )):
-
-			// get_template_part( 'parts/content', 'byline' );
-
-			// endif;
-
-
+	
 			get_template_part( 'parts/content', 'share' ); ?>
 
 		</header> <!-- end article header -->
 
     <div class="entry-content" itemprop="articleBody">
 
-			
 			<?php
+			
+			if(function_exists('get_field')):
+				
 
 			if(is_singular( 'articles' )):
 			
@@ -46,13 +42,6 @@
 				if( $desc ): 
 					echo $desc;
 				endif;
-			
-				// if( $date['year'] ): 
-				// 	if( $date['month']):
-				// 	echo	$date['month'] . ' ';
-				// 	endif;
-				// 	echo $date['year'] . '.';
-				// endif;
 			
 				if( $video ): 
 					echo '<figure class="video-wrapper">' . $video . '<figcaption>Watch the video of the <em>' . get_the_title() . '</em> lecture</figcaption></figure>';
@@ -220,7 +209,9 @@
 			// Do something...
 		endif;
 
-	    	wp_link_pages(); ?>
+	  wp_link_pages(); 
+				
+		endif;?>
 
 		</div> <!-- end article section -->
 

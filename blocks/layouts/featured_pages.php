@@ -24,8 +24,8 @@ if( !empty($block['align']) ) {
     $className .= ' align' . $block['align'];
 }
 
-// Load values and assing defaults.
-
+if(function_exists('get_field')):
+  
 if( have_rows('pages') ):
 
   $count = count(get_field('pages'));
@@ -60,4 +60,5 @@ if( have_rows('pages') ):
     echo '</div>';
 
 endif;
-?>
+
+endif;?>

@@ -24,6 +24,8 @@ if( !empty($block['align']) ) {
     $className .= ' align' . $block['align'];
 }
 
+if(function_exists('get_field')):
+  
 // Load values and assing defaults.
 $numberposts = get_field('number_of_items');
 $bg = get_field('background');
@@ -67,4 +69,5 @@ foreach($newArr as $post) {
 echo '</div><div class="slider-nav"><button onclick="prevSlide()" class="slick-arrow btn orange" aria-label="Previous" type="button" >❮</button><button onclick="nextSlide()" class="slick-arrow btn orange" aria-label="Next" type="button">❯</button></div></div></div>';
 
 wp_reset_postdata();
+endif;
 ?>

@@ -20,7 +20,9 @@
  if( !empty($block['className']) ) {
      $className .= ' ' . $block['className'];
  }
-
+ 
+ if(function_exists('get_field')):
+  
  // Load values and assing defaults.
 
  if( have_rows('links') ):
@@ -53,4 +55,5 @@
      echo '</div>';
 
  endif;
+endif;
  ?>

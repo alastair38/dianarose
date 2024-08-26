@@ -1,4 +1,6 @@
 <?php //vars from options page fields
+if(function_exists('get_field')):
+
 $name = get_field('contact_name', 'options');
 $email = get_field('contact_email', 'options');
 $phone = get_field('contact_phone', 'options');
@@ -125,3 +127,5 @@ $contact_form = get_field('contact_form', 'option');
 		</footer> <!-- end article footer -->
 
 </article> <!-- end article -->
+  
+<?php endif;?>

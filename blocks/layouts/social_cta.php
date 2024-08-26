@@ -15,6 +15,8 @@ if( !empty($block['anchor']) ) {
     $id = $block['anchor'];
 }
 
+if(function_exists('get_field')):
+  
 $cta = get_field('social_call_to_action');
 $link = get_field('social_cta_link');
 $linkText = get_field('social_cta_link_text');
@@ -43,3 +45,4 @@ $newsletterLinkText = get_field('newsletter_cta_link_text');
     </article>
   </div>
 </div>
+<?php endif;?>

@@ -14,10 +14,16 @@
 
 					<div class="entry-content archive-blog">
 
-					<?php $desc = get_field("news_page_description", "options");
+					<?php 
+					
+					if(function_exists('get_field')):
+					
+					$desc = get_field("news_page_description", "options");
 						if($desc) {
 							echo '<div class="entry-content archive-desc">' . $desc . '</div>';
 						}
+					
+					endif;
 					?>
 			    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 

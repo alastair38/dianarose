@@ -1,4 +1,8 @@
-<?php  $breadcrumbs = get_field('breadcrumbs', 'option');
+<?php  
+
+if(function_exists('get_field')):
+
+$breadcrumbs = get_field('breadcrumbs', 'option');
 
 if($breadcrumbs):?>
 <nav class="breadcrumb-nav" aria-label="Breadcrumb">
@@ -75,4 +79,6 @@ if($breadcrumbs):?>
 </ol>
 </nav>
 
-<?php endif;?>
+<?php endif;
+
+endif;?>

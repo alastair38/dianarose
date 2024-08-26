@@ -26,6 +26,8 @@ if( !empty($block['align']) ) {
 
 // Load values and assing defaults.
 
+if(function_exists('get_field')):
+
 $link = get_field('media_link');
 $date = get_field('media_date');
 
@@ -48,3 +50,4 @@ $date = get_field('media_date');
     //print_R($image);?>
 
 </div>
+<?php endif;?>

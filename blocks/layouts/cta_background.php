@@ -15,6 +15,10 @@ if( !empty($block['anchor']) ) {
     $id = $block['anchor'];
 }
 
+if(function_exists('get_field')):
+  
+  // check if ACF is activated to before grabbing field values
+
 $headerText = get_field('cta_header_text');
 $cta = get_field('call_to_action');
 $link = get_field('cta_link');
@@ -52,3 +56,5 @@ $image = get_field('cta_image');
     </article>
   
 </div>
+
+<?php endif;?>

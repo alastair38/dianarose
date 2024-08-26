@@ -24,6 +24,10 @@ if( !empty($block['align']) ) {
     $className .= ' align' . $block['align'];
 } ?>
 
+<?php if(function_exists('get_field')):?>
+  
+ 
+
 <section id="<?php echo $id;?>" class="row block featured-book accent z-depth-1">
 
 <?php 
@@ -74,3 +78,5 @@ $featured = get_field('featured_book');
 
 </div>
   </section>
+  
+<?php endif;?>

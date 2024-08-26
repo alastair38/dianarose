@@ -23,6 +23,12 @@
 
 			
 			<?php
+			
+			if(function_exists('get_field')):
+  
+				// check if ACF is activated to before grabbing field values
+				
+		
 
 			if(is_singular( 'articles' )):
 			
@@ -46,13 +52,7 @@
 				if( $desc ): 
 					echo $desc;
 				endif;
-			
-				// if( $date['year'] ): 
-				// 	if( $date['month']):
-				// 	echo	$date['month'] . ' ';
-				// 	endif;
-				// 	echo $date['year'] . '.';
-				// endif;
+	
 			
 				if( $video ): 
 					echo '<figure class="video-wrapper">' . $video . '<figcaption>Watch the video of the <em>' . get_the_title() . '</em> lecture</figcaption></figure>';
@@ -220,8 +220,8 @@
 			// Do something...
 		endif;
 
-	    	wp_link_pages(); ?>
-
+	    	wp_link_pages();
+		endif;?>
 		</div> <!-- end article section -->
 
 		<footer class="article-footer center">

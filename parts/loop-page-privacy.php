@@ -6,7 +6,8 @@
 
 		<?php
 		// vars from options page fields
-
+		if(function_exists('get_field')):
+ 
 		$privacy = get_field('information_collected', 'option');
 		$siteName = get_field('text_sitename', 'option');
 		if(!$siteName) {
@@ -19,10 +20,8 @@
 		?>
 
     <div class="entry-content" itemprop="articleBody">
-			<?php
-			echo '<p>'. get_field('privacy_general', 'option') . ' ' . $privacyContact . '.</p>';
-// vars
-
+		<?php
+		echo '<p>'. get_field('privacy_general', 'option') . ' ' . $privacyContact . '.</p>';
 
 		if( $privacy ):
 		$no_info = $privacy['no_information_collected'];
@@ -105,8 +104,6 @@
  			endif; ?>
 
 	</div> <!-- end article section -->
-
-	<footer class="article-footer">
-	</footer> <!-- end article footer -->
-
+	<?php endif;?>
+	
 </article> <!-- end article -->

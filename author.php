@@ -1,9 +1,11 @@
 <?php get_header();
+if(function_exists('get_field')):
 	$current_author = ( isset( $_GET['author_name'] ) ) ? get_user_by( 'slug', $author_name ) : get_userdata( intval( $author ) );
 	$author_biog = get_field('biography', 'user_'. $current_author->ID );
 	$author_image = get_field('user_image', 'user_'. $current_author->ID );
 	$author_title = get_field('user_title', 'user_'. $current_author->ID );
 	$author_twitter = get_field('twitter_handle', 'user_'. $current_author->ID );
+endif;
 ?>
 
 	<main class="container" itemscope itemtype="https://schema.org/Person">

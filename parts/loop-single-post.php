@@ -8,12 +8,6 @@
 
 			<h1 id="skip-target" class="entry-title single-title h4" itemprop="headline"><?php the_title();?></h1>
 			<?php 
-			// if(is_singular( 'post' )):
-
-			// get_template_part( 'parts/content', 'byline' );
-
-			// endif;
-
 
 			get_template_part( 'parts/content', 'share' ); ?>
 
@@ -23,12 +17,16 @@
 			
 		<?php the_content();?>
 
-		<?php $blog_link = get_field('blog_link');
+		<?php 
+		
+		if(function_exists('get_field')):
+
+		$blog_link = get_field('blog_link');
 
 		if( $blog_link ) {
 			echo '<div class="article-link"><a itemprop="sameAs" aria-label="Read ' . get_the_title() . '" href="' . $blog_link . '">Read Article</a></div>';
 			} 
-
+		endif;
 		?>
 
 		</div> <!-- end article section -->

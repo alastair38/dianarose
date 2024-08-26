@@ -2,7 +2,14 @@
 		
 			<div id="inner-footer" class="row no-margin-bot">
 
-				<?php if( have_rows('logos', 'option') ):
+				<?php 
+				
+				if(function_exists('get_field')):
+  
+					
+			
+				
+				if( have_rows('logos', 'option') ):
 
 					$count = count(get_field('logos', 'option'));
 					$cols = 12 / $count;
@@ -41,31 +48,9 @@
 
 				</div>
 
-				<?php endif;
-
-				// $fb = get_field("facebook", "options");
-				// $twitter = get_field("twitter", "options");
-				//$contact = get_field("contact_page", "options");
-				//
-
-				//
-				// if($fb):
-				// 	echo '<li><a href="' . $fb . '">Facebook<svg class="icon icon-facebook right"><use xlink:href="' . get_stylesheet_directory_uri() . '/assets/icons/symbol-defs.svg#icon-facebook"></use></svg></a></li>';
-		 		// endif;
-				//
-				// if($twitter):
-				// 	echo '<li><a href="https://twitter.com/' . $twitter . '">Twitter<svg class="icon icon-twitter right" aria-hidden="true"><use xlink:href="' . get_stylesheet_directory_uri() . '/assets/icons/symbol-defs.svg#icon-twitter"></use></svg></a></li>';
-		 		// endif;
-				//
-				// if($contact):
-				// echo '<ul id="contact" class="col s12">';
-				// 	echo '<li><a href="' . $contact . '">Contact<svg class="icon icon-mail right" aria-hidden="true"><use xlink:href="' . get_stylesheet_directory_uri() . '/assets/icons/symbol-defs.svg#icon-mail"></use></svg></a></li>';
-				// echo '</ul>';
-		 		// endif;
-				//
-
-
-				?>
+				<?php endif;	
+				endif;?>
+				
 				<div class="col s12">
 					<p class="source-org copyright">
 						<?php bloginfo('name'); ?> &copy; <?php echo date("Y");?>

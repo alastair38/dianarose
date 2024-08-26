@@ -8,6 +8,8 @@
 
 			<?php
 			// setting vars from options page fields
+			if(function_exists('get_field')):
+  
 			$privacy = get_field('information_collected', 'option');
 			$siteName = get_field('text_sitename', 'option');
 			if(!$siteName) {
@@ -62,7 +64,8 @@
 		   echo '</h2>';
 			 echo $analytics_cookies;
 		  }
-		}
+		}	
+	endif;
 	 ?>
 
  </div> <!-- end article section -->

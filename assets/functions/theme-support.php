@@ -37,12 +37,6 @@ function remove_plugin_image_sizes() {
         echo '<meta name="description" content="' . $des_post . '" />' . "\n";
     }
 		
-		// if ( is_home() ) {
-		// 		$desc = get_field("news_page_description", "options");
-		// 		$desc_news = strip_tags($desc);
-		// 		$desc_news = normalize_whitespace($desc_news);
-    //     echo '<meta name="description" content="' . $desc_news . '" />' . "\n";
-    // }
 		
     if ( is_front_page() ) {
         echo '<meta name="description" content="' . get_bloginfo( "description" ) . '" />' . "\n";
@@ -58,7 +52,9 @@ function remove_plugin_image_sizes() {
 				$des_term = normalize_whitespace($des_term);
         echo '<meta name="description" content="' . $des_term . '" />' . "\n";
     }
-
+		
+		if(function_exists('get_field')):
+  
 		if ( is_post_type_archive('publications') ) {
 				$desc = get_field("publications_page_description", "options");
 				$desc_pubs = strip_tags($desc);
@@ -78,7 +74,10 @@ function remove_plugin_image_sizes() {
 				$desc_workshops = strip_tags($desc);
 				$desc_workshops = normalize_whitespace($desc_workshops);
         echo '<meta name="description" content="' . $desc_workshops . '" />' . "\n";
-    }
+    }	
+	
+		endif;
+
 }
 add_action( 'wp_head', 'ac_base_meta_description');
 

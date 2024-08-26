@@ -14,10 +14,14 @@
 
 					<div class="entry-content archive-<?php echo get_post_type(); ?>">
 					<?php 
-					$lectDesc = get_field("lectures_page_description", "options");
-					$projDesc = get_field("projects_page_description", "options");
-					$pubDesc = get_field("publications_page_description", "options");
-					$booksDesc = get_field("books_page_description", "options");
+					
+					if(function_exists('get_field')):
+						$lectDesc = get_field("lectures_page_description", "options");
+						$projDesc = get_field("projects_page_description", "options");
+						$pubDesc = get_field("publications_page_description", "options");
+						$booksDesc = get_field("books_page_description", "options");
+					endif;
+					
 					if(is_post_type_archive( 'articles' )) {
 							echo '<div class="entry-content archive-desc">' . $pubDesc . '</div>';
 						} else if (is_post_type_archive( 'projects' )) {

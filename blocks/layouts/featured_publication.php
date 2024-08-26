@@ -28,9 +28,10 @@ if( !empty($block['align']) ) {
 
 <?php 
 // Load values and assing defauaside_title = get_field('block_title');
-$pubs = get_field('featured_publications');
 
+if(function_exists('get_field')):
 
+  $pubs = get_field('featured_publications');
 
 if( $pubs ): ?>
 
@@ -49,6 +50,10 @@ if( $pubs ): ?>
       <?php
 
       if($post->post_type === 'books'):
+        
+        if(function_exists('get_field')):
+          
+       
 
         $editors = get_field("editors", $post->ID);
         $pubTitle = get_field("publication", $post->ID);
@@ -120,11 +125,14 @@ if( $pubs ): ?>
       
         echo '<div class="article-link"><a itemprop="sameAs" href="' . get_the_permalink($post->ID) . '" rel="bookmark">View Publication</a></div>';
             // endif;
-
+        endif;
       endif;
 
       if($post->post_type === "articles"):
 
+      if(function_exists('get_field')): 
+          
+       
       $editors = get_field("editors", $post->ID);
       $pubTitle = get_field("publication_title", $post->ID);
       $volumeDetails = get_field("volume_details", $post->ID);
@@ -169,7 +177,7 @@ if( $pubs ): ?>
         echo '<div class="article-link"><a itemprop="sameAs" href="' . $pubLink . '">View Publication</a></div>';
       endif;
 
-      
+      endif;
 
       $library_tags = get_the_terms( get_the_ID(), 'articles_categories' );
       //print_R($library_tags);
@@ -197,4 +205,5 @@ if( $pubs ): ?>
   <?php endif; ?>
 
   </div>
-    </aside>
+  <?php endif;?>
+  </aside>

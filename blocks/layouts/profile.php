@@ -24,6 +24,8 @@ if( !empty($block['align']) ) {
     $className .= ' align' . $block['align'];
 }
 
+if(function_exists('get_field')):
+  
 // Load values and assing defaults.
 
 if( have_rows('profile_details') ):
@@ -31,7 +33,6 @@ if( have_rows('profile_details') ):
   $count = count(get_field('profile_details'));
   $cols = 12 / $count;
   $section_title = get_field('section_title');
-
 
   echo '<div id="' . $id . '" class="block profiles">';
 
@@ -85,5 +86,6 @@ if( have_rows('profile_details') ):
 
     echo '</div>';
 
+endif;
 endif;
 ?>

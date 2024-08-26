@@ -17,6 +17,8 @@
 
 			
 			<?php
+			
+			if(function_exists('get_field')):
 
 					$thumbnail = get_the_post_thumbnail_url(); 
 					$editors = get_field("editors");
@@ -167,7 +169,9 @@
 			// Do something...
 		endif;
 
-	    	wp_link_pages(); ?>
+	  wp_link_pages(); 		
+		
+		endif;?>
 
 		</div> <!-- end article section -->
 

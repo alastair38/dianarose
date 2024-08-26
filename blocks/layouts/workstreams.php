@@ -24,6 +24,9 @@ if( !empty($block['align']) ) {
     $className .= ' align' . $block['align'];
 }
 
+if(function_exists('get_field')):
+
+
 $args = array(
   'numberposts' => -1,
   'post_type' => 'post',
@@ -76,4 +79,5 @@ foreach($latest_posts as $post) {
 echo '</div></div>';
 
 wp_reset_postdata();
+endif;
 ?>

@@ -30,7 +30,7 @@ echo '<div class="article-link"><a itemprop="sameAs" aria-label="Read ' . get_th
 <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
 </svg></a></div>';
 } else {
-  echo '<div class="article-link"><a aria-label="Read ' . get_the_title() . '" href="' . the_permalink() . '" rel="bookmark">Read Article</a></div>';
+  echo '<div class="article-link"><a aria-label="Read ' . get_the_title() . '" href="' . get_the_permalink() . '" rel="bookmark">Read Article</a></div>';
 }
 	
   
